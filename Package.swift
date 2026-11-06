@@ -4,23 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-coach-marks",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "swift-coach-marks",
-            targets: ["swift_coach_marks"]
-        ),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "swift_coach_marks",
-            swiftSettings: [
-                .enableUpcomingFeature("ApproachableConcurrency"),
-            ],
-        ),
-
-    ]
+	name: "swift-coach-marks",
+	platforms: [.iOS(.v17)],
+	products: [
+		.library(name: "swift-coach-marks", targets: ["CoachMarks"]),
+	],
+	targets: [
+		.target(
+			name: "swift_coach_marks",
+			swiftSettings: [
+				.enableUpcomingFeature("ApproachableConcurrency"),
+			],
+		),
+	]
 )
